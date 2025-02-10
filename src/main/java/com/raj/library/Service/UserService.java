@@ -1,6 +1,5 @@
 package com.raj.library.Service;
 
-import com.raj.library.entity.Admin;
 import com.raj.library.entity.User;
 import com.raj.library.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +21,7 @@ public class UserService {
         }else {
             return false;
         }
+//        return userRepo.existsById(username);
     }
     private String userUserName;
     public boolean checkPassword(User user){
@@ -38,6 +38,15 @@ public class UserService {
     public User getUser(){
         Optional<User> byId = userRepo.findById(userUserName);
         return byId.get();
+    }
+    public boolean userCheckerService(String username, String password){
+        Optional<User> temp = userRepo.findById(username);
+        if(temp.isPresent()){
+            User myUser = temp.get();
+            return myUser.getPassword().equals(password);
+        }else{
+            return false;
+        }
     }
     public boolean deleteUser(User user){
         try {
