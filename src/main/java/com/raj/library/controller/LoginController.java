@@ -1,5 +1,6 @@
 package com.raj.library.controller;
 
+import com.raj.library.DTO.UserLoginRequest;
 import com.raj.library.Service.AdminService;
 import com.raj.library.Service.UserService;
 import com.raj.library.entity.Admin;
@@ -8,13 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Map;
 
 @Controller
-@RequestMapping("/login")
+@RequestMapping("/")
 public class LoginController {
 
     @Autowired
@@ -51,17 +51,21 @@ public class LoginController {
         model.addAttribute("userLogin",new User());
         return "userLogin";
     }
-    @PostMapping("/userLogin")
-    public String userChecker(@ModelAttribute User user){
-        if(userService.checkUserName(user)){
-            if(userService.checkPassword(user)){
-                return "redirect:/login/UserDetails";
-            }{
-                return "wrongPasswordUser";
-            }
-        }else{
-            return "noUser";
-        }
+    @PostMapping("userLogin")
+    public Map<String, Boolean> userChecker(@RequestBody UserLoginRequest userLoginRequest){
+        String username = userLoginRequest.getUserName();
+        String password = userLoginRequest.getPassword();
+//        if(userService.checkUserName(username)){
+//            if(userService.checkPassword(password)){
+//                return "redirect:/login/UserDetails";
+//            }{
+//                return "wrongPasswordUser";
+//            }
+//        }else{
+//            return "noUser";
+//        }
+        boolean isValid = userService.userCheckerService(username,password);
+        return Map.of("exists",isValid);
     }
     @GetMapping("/UserDetails")
     public String userDetailsShow(Model model){
