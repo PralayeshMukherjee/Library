@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import {Layout} from './Component/index'
+import {Layout,Home} from './Component/index'
 
 function App() {
   const [count, setCount] = useState(0)
