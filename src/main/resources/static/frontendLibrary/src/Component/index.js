@@ -1,4 +1,4 @@
 import Layout from '../Layout'
-import Home from '../Component/Landing/Home'
+import Home from './Landing/Home'
 
 export {Layout,Home};
