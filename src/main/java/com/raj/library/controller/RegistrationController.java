@@ -1,22 +1,18 @@
 package com.raj.library.controller;
 
+import com.raj.library.DTO.RegisterUser;
 import com.raj.library.Service.AdminService;
 import com.raj.library.Service.UserService;
 import com.raj.library.entity.Admin;
 import com.raj.library.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
-import org.springframework.stereotype.Controller;
+
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
-@Controller
+@RestController
 @RequestMapping("/registration")
 public class RegistrationController {
 
@@ -44,8 +40,15 @@ public class RegistrationController {
     }
 
     @PostMapping("/addUser")
-    public String postUser(@ModelAttribute User user){
-        userService.addUser(user);
-        return "SuccessUser";
+    public Map<String,Boolean> postUser(@RequestBody RegisterUser registerUser){
+        String username = registerUser.getUsername();
+        String password = registerUser.getPassword();
+        String name = registerUser.getName();
+        int age = Integer.parseInt(registerUser.getAge());
+        String phoneNumber = registerUser.getPhoneNumber();
+        String emailId = registerUser.getEmailId();
+        String gender = registerUser.getGender();
+        boolean isSaved = userService.addUser(username,password,name,age,phoneNumber,emailId,gender);
+        return Map.of("saved",isSaved);
     }
 }
