@@ -12,8 +12,22 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    public void addUser(User user){
-        userRepo.save(user);
+    public boolean addUser(String username,String password,String name,int age,String phoneNumber,String emailId,String gender){
+        try {
+            User user = new User();
+            user.setUserName(username);
+            user.setPassword(password);
+            user.setName(name);
+            user.setAge(age);
+            user.setPhoneNumber(phoneNumber);
+            user.setEmailId(emailId);
+            user.setGender(gender);
+            userRepo.save(user);
+            return true;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
     }
     public boolean checkUserName(User user){
         if(userRepo.existsById(user.getUserName())){
