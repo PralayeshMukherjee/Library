@@ -48,7 +48,7 @@ public class RegistrationController {
         String phoneNumber = registerUser.getPhoneNumber();
         String emailId = registerUser.getEmailId();
         String gender = registerUser.getGender();
-        boolean isSaved = userService.addUser(username,password,name,age,phoneNumber,emailId,gender);
-        return Map.of("saved",isSaved);
+        boolean isRegister = userService.addUser(username,password,name,age,phoneNumber,emailId,gender);
+        return Map.of("register", isRegister);
     }
 }
