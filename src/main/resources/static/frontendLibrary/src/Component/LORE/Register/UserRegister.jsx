@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function UserRegister() {
     const [registerFormData,setRegisterFormData] = useState({username:"",password:"",name:"",age:"",phoneNumber:"",emailId:"",gender:""});
@@ -18,9 +19,14 @@ function UserRegister() {
         const data = await response.json();
         console.log(data);
         
-        if(data.saved){
-            alert("User register successfully!");
+        if(data.register){
+            const navigate = useNavigate();
+            localStorage.setItem('register','true');
+            useEffect(()=>{
+                navigate('/UserRegisterSuccess')
+            })
         }else{
+            localStorage.setItem('register','false');
             alert("No user register!")
         }
         
