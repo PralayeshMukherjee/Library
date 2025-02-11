@@ -40,13 +40,19 @@ public class UserService {
         return byId.get();
     }
     public boolean userCheckerService(String username, String password){
-        Optional<User> temp = userRepo.findById(username);
-        if(temp.isPresent()){
-            User myUser = temp.get();
-            return myUser.getPassword().equals(password);
-        }else{
-            return false;
+        try {
+            System.out.println(username);
+            Optional<User> temp = userRepo.findById(username);
+            if(temp.isPresent()){
+                User myUser = temp.get();
+                return myUser.getPassword().equals(password);
+            }else{
+                return false;
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
+        return false;
     }
     public boolean deleteUser(User user){
         try {
