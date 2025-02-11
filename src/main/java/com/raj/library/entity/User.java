@@ -6,12 +6,12 @@ import jakarta.persistence.*;
 @Table(name="Student")
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String userName;
     private String password;
     private String name;
     private int age;
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
     private int dueBooks;
     private int assignedBooks;
     private String phoneNumber;
@@ -20,12 +20,12 @@ public class User {
     public User(){
 
     }
-    public User(String userName, String password, String name, int age, String id, int dueBooks, int assignedBooks, String phoneNumber, String emailId, String gender) {
+    public User(String userName, String password, String name, int age, int dueBooks, int assignedBooks, String phoneNumber, String emailId, String gender) {
         this.userName = userName;
         this.password = password;
         this.name = name;
         this.age = age;
-        this.id = id;
+//        this.id = id;
         this.dueBooks = dueBooks;
         this.assignedBooks = assignedBooks;
         this.phoneNumber = phoneNumber;
@@ -73,12 +73,8 @@ public class User {
         this.age = age;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public int getDueBooks() {
