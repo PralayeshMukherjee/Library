@@ -16,34 +16,34 @@ public class Profile {
 
     @Autowired
     private UserService userService;
-
-    @GetMapping("/Me")
-    public String getUser(Model model){
-        model.addAttribute("details",userService.getUser());
-        return "Me";
-    }
-    @GetMapping("/Edit")
-    public String EditUser(Model model){
-        model.addAttribute("Delete",new User());
-        return "Edit";
-    }
-    @PostMapping("/deleteAccount")
-    public String editProfile(@ModelAttribute User user){
-        if(userService.checkUserName(user)){
-            System.out.println(user.getUserName());
-            if (userService.checkPassword(user)){
-                System.out.println(user.getPassword());
-                if(userService.deleteUser(user)){
-                    return "DeleteSuccessfully";
-                }else{
-                    return "NotSuccess";
-                }
-            }else{
-                return "wrongPasswordUser";
-            }
-        }else{
-            return "noUser";
-        }
-    }
+//
+//    @GetMapping("/Me")
+//    public String getUser(Model model){
+//        model.addAttribute("details",userService.getUser());
+//        return "Me";
+//    }
+//    @GetMapping("/Edit")
+//    public String EditUser(Model model){
+//        model.addAttribute("Delete",new User());
+//        return "Edit";
+//    }
+//    @PostMapping("/deleteAccount")
+//    public String editProfile(@ModelAttribute User user){
+//        if(userService.checkUserName(user)){
+//            System.out.println(user.getUsername());
+//            if (userService.checkPassword(user)){
+//                System.out.println(user.getPassword());
+//                if(userService.deleteUser(user)){
+//                    return "DeleteSuccessfully";
+//                }else{
+//                    return "NotSuccess";
+//                }
+//            }else{
+//                return "wrongPasswordUser";
+//            }
+//        }else{
+//            return "noUser";
+//        }
+//    }
 
 }
