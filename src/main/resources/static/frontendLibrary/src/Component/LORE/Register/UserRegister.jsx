@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 function UserRegister() {
-    const [registerFormData,setRegisterFormData] = useState({userName:"",password:"",name:"",age:"",phoneNumber:"",emailId:"",gender:""});
+    const [registerFormData,setRegisterFormData] = useState({username:"",password:"",name:"",age:"",phoneNumber:"",emailId:"",gender:""});
     const handleChange = (e)=>{
         setRegisterFormData({...registerFormData,[e.target.name]:e.target.value});
     }
@@ -31,7 +31,7 @@ function UserRegister() {
         <h2 className="text-2xl font-semibold text-center text-white mb-4">Register</h2>
         <form onSubmit={handelSubmit} className="space-y-4">
             <label className="text-white block text-sm font-medium m-auto">Username</label>
-          <input name="userName" type="text" placeholder="Username" onChange={handleChange} className="w-full mt-1 p-2 rounded-lg bg-white/30 bg-opacity-50 focus:outline-none" required />
+          <input name="username" type="text" placeholder="Username" onChange={handleChange} className="w-full mt-1 p-2 rounded-lg bg-white/30 bg-opacity-50 focus:outline-none" required />
           <label className="text-white block text-sm font-medium m-auto">Password</label>
           <input name="password" type="password" placeholder="Password" onChange={handleChange} className="w-full mt-1 p-2 rounded-lg bg-white/20 bg-opacity-50 focus:outline-none" required />
           <label className="text-white block text-sm font-medium m-auto">Full Name</label>
