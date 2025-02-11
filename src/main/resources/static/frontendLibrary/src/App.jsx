@@ -1,5 +1,5 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import {Layout,Home,UserLogin} from './Component/index'
+import {Layout,Home,UserLogin,UserRegister} from './Component/index'
 
 function App() {
   const MyRouter = createBrowserRouter(
@@ -10,6 +10,7 @@ function App() {
         <Route path='home' element={<Home/>}/>
       </Route>
       <Route path='userLogin' element={<UserLogin/>}/>
+      <Route path='userRegister' element={<UserRegister/>}/>
       </>
     )
   )
