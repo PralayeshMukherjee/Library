@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {Link} from 'react-router-dom'
 import userLogin from '../../../images/userLogin.jpg'
 
 function UserLogin() {
@@ -39,8 +40,8 @@ function UserLogin() {
             <input type="password" id="password" name="password" className="w-full p-2 bg-transparent border border-white text-white rounded-lg focus:outline-none placeholder-white" placeholder="Enter password" onChange={handelChange} />
           </div>
           <button type="submit" className="bg-white text-black py-2 rounded-lg hover:bg-transparent hover:text-white border border-white transition">Login</button>
-          <p className="text-white text-xs text-center">Don't have an account? <a href="/registration/add-User" className="text-orange-400 hover:text-orange-500">Register as User</a></p>
-          <p className="text-white text-xs text-center">Login as Admin: <a href="/login/admin-Login" className="text-orange-400 hover:text-orange-500">Login as Admin</a></p>
+          <p className="text-white text-xs text-center">Don't have an account? <Link to='/userRegister' className="text-orange-400 hover:text-orange-500">Register as User</Link></p>
+          <p className="text-white text-xs text-center">Login as Admin: <Link href="/login/admin-Login" className="text-orange-400 hover:text-orange-500">Login as Admin</Link></p>
         </form>
       </div>
     </div>
