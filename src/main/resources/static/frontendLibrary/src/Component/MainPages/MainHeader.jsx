@@ -36,7 +36,7 @@ function MainHeader() {
             </Link>
           </li>
           <li>
-            <Link to="#" className="hover:text-gray-300">
+            <Link to={"/Main/about"} className="hover:text-gray-300">
               About
             </Link>
           </li>
