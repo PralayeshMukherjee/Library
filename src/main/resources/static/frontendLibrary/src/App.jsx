@@ -14,6 +14,7 @@ import {
   MainLayout,
   MainFooter,
   MainHome,
+  About,
 } from "./Component/index";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route index element={<Home />} />
           //for when / hit the url then home page automaticly loaded
           <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
         </Route>
         <Route path="/userLogin" element={<UserLogin />} />
         <Route path="/userRegister" element={<UserRegister />} />
@@ -31,6 +33,7 @@ function App() {
         <Route path="/Main" element={<MainLayout />}>
           <Route index element={<MainHome />} />
           <Route path="MainHome" element={<MainHome />} />
+          <Route path="about" element={<About />} />
         </Route>
       </>
     )
