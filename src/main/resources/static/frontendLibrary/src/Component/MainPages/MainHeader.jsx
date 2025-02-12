@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Library from "../../images/Library.png";
-import User from "../../images/user.png";
-import Profile from "../../images/profile.png";
-import Setting from "../../images/setting.png";
-import Help from "../../images/help.png";
-import Logout from "../../images/logout.png";
+import { Library, User, Profile, Setting, Help, Logout } from "../index";
 
 function MainHeader() {
   const [menuOpen, setMenuOpen] = useState(false);

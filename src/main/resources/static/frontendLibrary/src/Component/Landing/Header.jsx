@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import Library from "../../images/Library.png";
+import { Library } from "../index";
 
 export default function Header() {
   return (

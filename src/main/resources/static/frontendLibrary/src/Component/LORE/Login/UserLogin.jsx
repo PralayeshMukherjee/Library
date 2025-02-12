@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import userLogin from "../../../images/userLogin.jpg";
+import { userLoginPNG } from "../../index";
 
 function UserLogin() {
   const [formData, setFormData] = useState({ username: "", password: "" });
@@ -31,7 +31,7 @@ function UserLogin() {
   return (
     <div
       className="flex justify-center items-center h-screen bg-cover bg-center"
-      style={{ backgroundImage: `url(${userLogin})` }}
+      style={{ backgroundImage: `url(${userLoginPNG})` }}
     >
       <div className="w-80 p-6 bg-white/20 bg-opacity-20 backdrop-blur-md shadow-md rounded-lg border border-white">
         <h2 className="text-white text-xl font-semibold text-center mb-4">

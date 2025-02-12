@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Pic from "../../images/pic.png";
+import { Pic } from "../index";
 import Typed from "typed.js";
 
 function MainHome() {

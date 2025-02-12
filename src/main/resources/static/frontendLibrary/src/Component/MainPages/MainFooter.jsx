@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import img1 from "../../images/Library.png";
+import { Library } from "../index";
 
 function MainFooter() {
   return (
@@ -10,7 +10,7 @@ function MainFooter() {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <Link to="/" className="flex items-center">
-              <img src={img1} className="mr-3 h-16" alt="Logo" />
+              <img src={Library} className="mr-3 h-16" alt="Logo" />
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
