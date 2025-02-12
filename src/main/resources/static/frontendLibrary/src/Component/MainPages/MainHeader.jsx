@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import Library from "../../images/Library.png";
 import User from "../../images/user.png";
 import Profile from "../../images/profile.png";
@@ -10,6 +10,13 @@ import Logout from "../../images/logout.png";
 function MainHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const toggleMenu = () => setMenuOpen(!menuOpen);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const isLogin = localStorage.getItem("isLogin");
+    if (isLogin != "true") {
+      navigate("/userLogin");
+    }
+  });
 
   return (
     <header className="shadow sticky z-50 top-0">
