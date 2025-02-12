@@ -5,7 +5,7 @@ function UserRegisterSuccess() {
     const Navigate = useNavigate();
     useEffect(()=>{
         const isRegister = localStorage.getItem('register');
-        if(isRegister==true){
+        if(isRegister=='true'){
             const timer = setTimeout(()=>{
                 Navigate('/userLogin');
             },2000);
