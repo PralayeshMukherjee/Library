@@ -12,9 +12,10 @@ function MainHeader() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
-      {/* Navbar */}
-      <nav className="flex justify-between items-center p-5 bg-gray-900">
+    <header className="shadow sticky z-50 top-0">
+      {/* <div className="min-h-screen bg-gradient-to-r from-indigo-500 to-purple-600 text-white">
+        Navbar */}
+      <nav className="flex justify-between items-center p-5 bg-gray-900 text-white">
         <img src={Library} alt="Logo" className="w-24" />
         <ul className="hidden md:flex space-x-6">
           <li>
@@ -89,7 +90,8 @@ function MainHeader() {
           )}
         </div>
       </nav>
-    </div>
+      {/* </div> */}
+    </header>
   );
 }
 
