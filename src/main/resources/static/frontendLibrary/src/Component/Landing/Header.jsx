@@ -42,7 +42,7 @@ export default function Header() {
               </li>
               <li>
                 <NavLink
-                  to={"/about"}
+                  to={"/Landing/about"}
                   className={`text-white hover:text-orange-400`}
                 >
                   About
