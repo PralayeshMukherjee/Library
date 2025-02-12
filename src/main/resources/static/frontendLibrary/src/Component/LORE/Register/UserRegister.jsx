@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 function UserRegister() {
+  const navigate = useNavigate();
     const [registerFormData,setRegisterFormData] = useState({username:"",password:"",name:"",age:"",phoneNumber:"",emailId:"",gender:""});
     const handleChange = (e)=>{
         setRegisterFormData({...registerFormData,[e.target.name]:e.target.value});
@@ -20,11 +21,10 @@ function UserRegister() {
         console.log(data);
         
         if(data.register){
-            const navigate = useNavigate();
             localStorage.setItem('register','true');
-            useEffect(()=>{
-                navigate('/UserRegisterSuccess')
-            })
+            const raj = navigate('/UserRegisterSuccess')
+            console.log(raj);
+            
         }else{
             localStorage.setItem('register','false');
             alert("No user register!")
