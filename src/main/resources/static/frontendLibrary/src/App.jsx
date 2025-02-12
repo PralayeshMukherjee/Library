@@ -13,6 +13,7 @@ import {
   MainHeader,
   MainLayout,
   MainFooter,
+  MainHome,
 } from "./Component/index";
 
 function App() {
@@ -27,7 +28,10 @@ function App() {
         <Route path="/userLogin" element={<UserLogin />} />
         <Route path="/userRegister" element={<UserRegister />} />
         <Route path="/UserRegisterSuccess" element={<UserRegisterSuccess />} />
-        <Route path="/Main" element={<MainLayout />}></Route>
+        <Route path="/Main" element={<MainLayout />}>
+          <Route index element={<MainHome />} />
+          <Route path="MainHome" element={<MainHome />} />
+        </Route>
       </>
     )
   );
