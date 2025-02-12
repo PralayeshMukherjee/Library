@@ -22,10 +22,10 @@ function UserLogin() {
     const data = await response.json();
     console.log(data);
     if (data.exists) {
-      alert("user present here");
+      localStorage.setItem("isLogin", "true");
       navigate("/Main");
     } else {
-      alert("user not present");
+      alert("User not Register");
     }
   };
   return (
