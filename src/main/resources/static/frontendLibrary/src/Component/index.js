@@ -7,5 +7,6 @@ import MainHeader from '../Component/MainPages/MainHeader'
 import MainLayout from '../MainLayout'
 import MainFooter from '../Component/MainPages/MainFooter.jsx'
 import MainHome from '../Component/MainPages/MainHome.jsx'
+import About from '../Component/Landing/About.jsx'
 
-export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome};
+export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About};
