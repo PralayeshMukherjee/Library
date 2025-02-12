@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Library from "../../images/Library.png";
 import User from "../../images/user.png";
 import Profile from "../../images/profile.png";
@@ -19,9 +19,9 @@ function MainHeader() {
         <img src={Library} alt="Logo" className="w-24" />
         <ul className="hidden md:flex space-x-6">
           <li>
-            <Link to="/" className="hover:text-gray-300">
+            <NavLink to={"/Main/MainHome"} className="hover:text-gray-300">
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
             <Link to="#" className="hover:text-gray-300">
