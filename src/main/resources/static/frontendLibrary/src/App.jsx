@@ -12,6 +12,7 @@ import {
   UserRegisterSuccess,
   MainHeader,
   MainLayout,
+  MainFooter,
 } from "./Component/index";
 
 function App() {
