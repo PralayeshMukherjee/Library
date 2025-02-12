@@ -5,5 +5,6 @@ import UserRegister from '../Component/LORE/Register/UserRegister'
 import UserRegisterSuccess from '../Component/Success/UserRegisterSuccess'
 import MainHeader from '../Component/MainPages/MainHeader'
 import MainLayout from '../MainLayout'
+import MainFooter from '../Component/MainPages/MainFooter.jsx'
 
-export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout};
+export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter};
