@@ -17,6 +17,7 @@ import {
   About,
   SearchBox,
   Features,
+  Sellers,
 } from "./Component/index";
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="features" element={<Features />}>
             <Route index element={<SearchBox />} />
+            <Route path="Sellers" element={<Sellers />} />
           </Route>
         </Route>
       </>
