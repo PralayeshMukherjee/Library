@@ -32,11 +32,11 @@ function UserRegister() {
     console.log(data);
 
     if (data.register) {
-      localStorage.setItem("register", "true");
+      sessionStorage.setItem("register", "true");
       const raj = navigate("/UserRegisterSuccess");
       console.log(raj);
     } else {
-      localStorage.setItem("register", "false");
+      sessionStorage.setItem("register", "false");
       alert("No user register!");
     }
   };

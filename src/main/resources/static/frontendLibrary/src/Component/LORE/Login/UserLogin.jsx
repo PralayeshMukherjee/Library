@@ -22,7 +22,7 @@ function UserLogin() {
     const data = await response.json();
     console.log(data);
     if (data.exists) {
-      localStorage.setItem("isLogin", "true");
+      sessionStorage.setItem("isLogin", "true");
       navigate("/Main");
     } else {
       alert("User not Register");

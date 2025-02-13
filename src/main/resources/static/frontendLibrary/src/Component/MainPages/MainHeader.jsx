@@ -7,7 +7,7 @@ function MainHeader() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const navigate = useNavigate();
   useEffect(() => {
-    const isLogin = localStorage.getItem("isLogin");
+    const isLogin = sessionStorage.getItem("isLogin");
     if (isLogin != "true") {
       navigate("/userLogin");
     }
