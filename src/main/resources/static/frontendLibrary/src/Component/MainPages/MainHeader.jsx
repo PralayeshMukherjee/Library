@@ -21,24 +21,60 @@ function MainHeader() {
         <img src={Library} alt="Logo" className="w-24" />
         <ul className="hidden md:flex space-x-6">
           <li>
-            <NavLink to={"/Main/MainHome"} className="hover:text-gray-300">
+            <NavLink
+              to={"/Main/MainHome"}
+              className={({ isActive }) =>
+                `hover:text-orange-300 ${
+                  isActive
+                    ? "text-orange-300 hover:text-orange-400"
+                    : "text-white"
+                }`
+              }
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <Link to={"/Main/features"} className="hover:text-gray-300">
+            <NavLink
+              to={"/Main/features"}
+              className={({ isActive }) =>
+                `hover:text-orange-300 ${
+                  isActive
+                    ? "text-orange-300 hover:text-orange-400"
+                    : "text-white"
+                }`
+              }
+            >
               Features
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={"/Main/about"} className="hover:text-gray-300">
+            <NavLink
+              to={"/Main/about"}
+              className={({ isActive }) =>
+                `hover:text-orange-300 ${
+                  isActive
+                    ? "text-orange-300 hover:text-orange-400"
+                    : "text-white"
+                }`
+              }
+            >
               About
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/Contact" className="hover:text-gray-300">
+            <NavLink
+              to="/Contact"
+              className={({ isActive }) =>
+                `hover:text-orange-300 ${
+                  isActive
+                    ? "text-orange-300 hover:text-orange-400"
+                    : "text-white"
+                }`
+              }
+            >
               Contact
-            </Link>
+            </NavLink>
           </li>
         </ul>
         <div className="relative">
