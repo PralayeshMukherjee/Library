@@ -27,6 +27,8 @@ public class Seller {
         this.phoneNumber = phoneNumber;
         this.emailId = emailId;
     }
+//    I use Many to Many annotation from JPA repo because seller has multiple books and books also have multiple seller it automatically manage two tables
+    @ManyToMany
 
     public String getUserName() {
         return userName;
