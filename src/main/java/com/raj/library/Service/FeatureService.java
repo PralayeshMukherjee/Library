@@ -12,7 +12,7 @@ import java.util.List;
 public class FeatureService {
     @Autowired
     private SellerRepository sellerRepository;
-    public ResponseEntity<List<Seller>> searchSellersByBook(String title){
+    public ResponseEntity<List<Seller>> searchSellersByBookService(String title){
         List<Seller> sellers = sellerRepository.findSellersByBookTitle(title);
         return ResponseEntity.ok(sellers);
     }
