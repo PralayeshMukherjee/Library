@@ -2,6 +2,7 @@ package com.raj.library.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -39,6 +40,15 @@ public class Seller {
             inverseJoinColumns = @JoinColumn(name = "book_id")//foreign key (FK) referring to Book
     )
 //    use join table method to join seller table and book table with seller_book table where seller_id from seller table is the foreign key to refer seller and book_id from book table is the foreign key to refer book
+    private List<Book> books = new ArrayList<>();
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 
     public Long getId() {
         return id;
