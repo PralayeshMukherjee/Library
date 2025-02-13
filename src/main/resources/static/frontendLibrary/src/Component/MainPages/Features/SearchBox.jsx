@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Search, Clear } from "../../index";
+import { useNavigate } from "react-router-dom";
 
 const products = [
   "Apple iPhone 15",
@@ -18,7 +19,8 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
-
+  const navigate = useNavigate();
+  sessionStorage.setItem("title", "selectedProduct");
   // Handle input change
   const handleChange = (e) => {
     const value = e.target.value;
@@ -46,7 +48,6 @@ const SearchBar = () => {
     setSuggestions([]);
     setSelectedProduct(null);
   };
-
   return (
     <div className="relative w-full max-w-lg mx-auto mt-10">
       {/* Search Input */}
@@ -85,12 +86,7 @@ const SearchBar = () => {
       )}
 
       {/* Selected Product Display */}
-      {selectedProduct && (
-        <div className="mt-6 p-4 border border-gray-300 rounded-lg bg-gray-100 text-center shadow">
-          <h2 className="text-lg font-bold text-gray-700">Search Result</h2>
-          <p className="text-gray-600">{selectedProduct}</p>
-        </div>
-      )}
+      {selectedProduct && navigate("/Main/features/Sellers")}
     </div>
   );
 };
