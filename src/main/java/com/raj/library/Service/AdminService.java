@@ -1,6 +1,6 @@
 package com.raj.library.Service;
 
-import com.raj.library.entity.Admin;
+import com.raj.library.entity.Seller;
 import com.raj.library.repository.AdminRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,11 +14,11 @@ public class AdminService {
     AdminRepo adminRepo;
 
 
-    public void addAdmin(Admin admin){
+    public void addAdmin(Seller admin){
         adminRepo.save(admin);
     }
 
-    public boolean checkUserName(Admin admin){
+    public boolean checkUserName(Seller admin){
         if(adminRepo.existsById(admin.getUserName())){
             return true;
         }else{
@@ -26,8 +26,8 @@ public class AdminService {
         }
     }
     private String adminUserName;
-    public boolean checkPassword(Admin admin){
-        Optional<Admin> byId = adminRepo.findById(admin.getUserName());
+    public boolean checkPassword(Seller admin){
+        Optional<Seller> byId = adminRepo.findById(admin.getUserName());
         System.out.println(byId.get().getPassword());
         System.out.println(admin.getPassword());
         if(byId.get().getPassword().equals(admin.getPassword())){
@@ -37,8 +37,8 @@ public class AdminService {
             return false;
         }
     }
-    public Admin getAdmin(){
-        Optional<Admin> byId = adminRepo.findById(adminUserName);
+    public Seller getAdmin(){
+        Optional<Seller> byId = adminRepo.findById(adminUserName);
         return byId.get();
     }
 }

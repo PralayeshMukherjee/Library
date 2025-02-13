@@ -2,11 +2,12 @@ package com.raj.library.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Librarian")
-public class Admin {
+@Table(name="Seller")
+public class Seller {
     @Id
     private String userName;
     private String password;
@@ -15,10 +16,10 @@ public class Admin {
     private String phoneNumber;
     private String emailId;
 
-    public Admin(){
+    public Seller(){
 
     }
-    public Admin(String userName, String password, String name, int age, String phoneNumber, String emailId) {
+    public Seller(String userName, String password, String name, int age, String phoneNumber, String emailId) {
         this.userName = userName;
         this.password = password;
         this.name = name;

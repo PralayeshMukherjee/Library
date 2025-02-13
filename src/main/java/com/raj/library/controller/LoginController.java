@@ -17,11 +17,11 @@ public class LoginController {
 //
 //    @GetMapping("/admin-Login")
 //    public String adminLogin(Model model){
-//        model.addAttribute("adminLogin",new Admin());
+//        model.addAttribute("adminLogin",new Seller());
 //        return "adminLogin";
 //    }
 //    @PostMapping("/adminLogin")
-//    public String adminChecker(@ModelAttribute Admin admin){
+//    public String adminChecker(@ModelAttribute Seller admin){
 //        if(adminService.checkUserName(admin)){
 //            if(adminService.checkPassword(admin)){
 //                return "redirect:/login/AdminDetails";

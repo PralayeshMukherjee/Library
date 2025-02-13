@@ -1,11 +1,9 @@
 package com.raj.library.repository;
 
-import com.raj.library.entity.Admin;
+import com.raj.library.entity.Seller;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AdminRepo extends JpaRepository<Admin,String> {
+public interface AdminRepo extends JpaRepository<Seller,String> {
 }

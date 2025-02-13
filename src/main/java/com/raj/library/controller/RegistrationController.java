@@ -3,7 +3,7 @@ package com.raj.library.controller;
 import com.raj.library.DTO.RegisterUser;
 import com.raj.library.Service.AdminService;
 import com.raj.library.Service.UserService;
-import com.raj.library.entity.Admin;
+import com.raj.library.entity.Seller;
 import com.raj.library.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,13 +20,13 @@ public class RegistrationController {
     private AdminService adminService;
 
     @PostMapping("/addAdmin")
-    public String  addAdmin(@ModelAttribute Admin admin){
+    public String  addAdmin(@ModelAttribute Seller admin){
         adminService.addAdmin(admin);
         return "SuccessAdmin";
     }
-    @GetMapping("/add-Admin")
+    @GetMapping("/add-Seller")
     public String getMethodForAddAdmin(Model model){
-        model.addAttribute("admin",new Admin());
+        model.addAttribute("admin",new Seller());
         return "addAdmin";
     }
 
