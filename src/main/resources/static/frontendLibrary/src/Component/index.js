@@ -17,5 +17,9 @@ import Logout from "../images/logout.png";
 import Pic from "../images/pic.png";
 import userLoginPNG from "../images/userLogin.jpg";
 import AboutPNG from '../images/About.svg'
+import SearchBox from './MainPages/Features/SearchBox.jsx'
+import Features from './MainPages/Features/Features.jsx'
+import Search from '../images/Search.png'
+import Clear from '../images/Clear.png'
 
-export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG};
+export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG,SearchBox,Features,Search,Clear};
