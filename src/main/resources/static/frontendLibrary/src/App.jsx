@@ -15,6 +15,8 @@ import {
   MainFooter,
   MainHome,
   About,
+  SearchBox,
+  Features,
 } from "./Component/index";
 
 function App() {
@@ -34,6 +36,9 @@ function App() {
           <Route index element={<MainHome />} />
           <Route path="MainHome" element={<MainHome />} />
           <Route path="about" element={<About />} />
+          <Route path="features" element={<Features />}>
+            <Route index element={<SearchBox />} />
+          </Route>
         </Route>
       </>
     )
