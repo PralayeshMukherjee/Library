@@ -21,7 +21,7 @@ function App() {
   const MyRouter = createBrowserRouter(
     createRoutesFromElements(
       <>
-        <Route path="/Landing" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           //for when / hit the url then home page automaticly loaded
           <Route path="home" element={<Home />} />
