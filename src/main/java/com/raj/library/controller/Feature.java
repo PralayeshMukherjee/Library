@@ -5,6 +5,7 @@ import com.raj.library.Service.FeatureService;
 import com.raj.library.entity.Seller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,7 +17,7 @@ import java.util.List;
 public class Feature {
     @Autowired
     private FeatureService featureService;
-
+    @PostMapping("/fetchSeller")
     public ResponseEntity<List<Seller>> searchSellersByBook(@RequestBody BookSearchRequest bookSearchRequest){
         String title = bookSearchRequest.getTitle();
         return featureService.searchSellersByBookService(title);
