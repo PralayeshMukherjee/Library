@@ -26,7 +26,7 @@ function MainHeader() {
             </NavLink>
           </li>
           <li>
-            <Link to="#" className="hover:text-gray-300">
+            <Link to={"/Main/features"} className="hover:text-gray-300">
               Features
             </Link>
           </li>
