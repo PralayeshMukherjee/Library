@@ -1,5 +1,6 @@
 package com.raj.library.controller;
 
+import com.raj.library.DTO.BookSearchRequest;
 import com.raj.library.Service.FeatureService;
 import com.raj.library.entity.Seller;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,5 +17,8 @@ public class Feature {
     @Autowired
     private FeatureService featureService;
 
-    public ResponseEntity<List<Seller>> searchSellersByBook(@RequestBody)
+    public ResponseEntity<List<Seller>> searchSellersByBook(@RequestBody BookSearchRequest bookSearchRequest){
+        String title = bookSearchRequest.getTitle();
+        return featureService.searchSellersByBookService(title);
+    }
 }
