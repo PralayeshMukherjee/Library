@@ -19,6 +19,7 @@ import {
   Features,
   Sellers,
   SellerLogin,
+  SellerRegister,
 } from "./Component/index";
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/userRegister" element={<UserRegister />} />
         <Route path="/UserRegisterSuccess" element={<UserRegisterSuccess />} />
         <Route path="/SellerLogin" element={<SellerLogin />} />
+        <Route path="/SellerRegister" element={<SellerRegister />} />
         <Route path="/Main" element={<MainLayout />}>
           <Route index element={<MainHome />} />
           <Route path="MainHome" element={<MainHome />} />
