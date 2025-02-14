@@ -3,6 +3,7 @@ import { Search, Clear } from "../../index";
 import { useNavigate } from "react-router-dom";
 
 const products = [
+  "Mathematics by S.N.DAY",
   "Apple iPhone 15",
   "Samsung Galaxy S23",
   "OnePlus Nord 3",
@@ -20,7 +21,6 @@ const SearchBar = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const navigate = useNavigate();
-  sessionStorage.setItem("title", "selectedProduct");
   // Handle input change
   const handleChange = (e) => {
     const value = e.target.value;
@@ -40,7 +40,9 @@ const SearchBar = () => {
   const handleSelect = (product) => {
     setQuery(product);
     setSelectedProduct(product);
+    sessionStorage.setItem("title", product);
     setSuggestions([]);
+    navigate("/Main/features/Sellers");
   };
 
   const clearInput = () => {
@@ -84,9 +86,6 @@ const SearchBar = () => {
           ))}
         </ul>
       )}
-
-      {/* Selected Product Display */}
-      {selectedProduct && navigate("/Main/features/Sellers")}
     </div>
   );
 };

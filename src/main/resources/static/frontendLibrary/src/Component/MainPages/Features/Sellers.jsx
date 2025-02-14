@@ -1,9 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function Sellers() {
-  const [sellers, setSellers] = useState("");
-  const query = sessionStorage.getItem("title");
-  setSellers(query);
+  const [sellers, setSellers] = useState([]);
+  const [product, setProduct] = useState("");
+  useEffect(() => {
+    const query = sessionStorage.getItem("title");
+    setProduct(query);
+    const sellerFetch = async () => {
+      try {
+        const response = await fetch(
+          "http://localhost:8080/feature/fetchSeller",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ product }),
+          }
+        );
+        if (!response.ok) {
+          throw new Error("Failed to load from");
+        }
+        const data = await response.json();
+        setSellers(data);
+        console.log("Fetched sellers:", data);
+      } catch (error) {
+        console.log("Error fetching sellers:", error);
+      }
+    };
+    sellerFetch();
+  }, [product]);
   return (
     <div>
       {sellers.length > 0 && (
