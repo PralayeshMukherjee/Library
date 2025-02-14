@@ -49,7 +49,7 @@ function SellerRegister() {
             Username
           </label>
           <input
-            name="username"
+            name="userName"
             type="text"
             placeholder="Username"
             onChange={handleChange}
