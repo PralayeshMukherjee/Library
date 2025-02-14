@@ -73,7 +73,7 @@ function SellerLogin() {
           <p className="text-white text-xs text-center">
             Don't have an account?{" "}
             <Link
-              to="/userRegister"
+              to="/SellerRegister"
               className="text-orange-400 hover:text-orange-500"
             >
               Register as Seller
