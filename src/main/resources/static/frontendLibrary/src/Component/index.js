@@ -22,5 +22,6 @@ import Features from './MainPages/Features/Features.jsx'
 import Search from '../images/Search.png'
 import Clear from '../images/Clear.png'
 import Sellers from '../Component/MainPages/Features/Sellers.jsx'
+import SellerLogin from '../Component/LORE/Login/SellerLogin.jsx'
 
-export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG,SearchBox,Features,Search,Clear,Sellers};
+export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG,SearchBox,Features,Search,Clear,Sellers,SellerLogin};
