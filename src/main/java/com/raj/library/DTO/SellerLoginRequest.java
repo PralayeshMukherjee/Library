@@ -7,5 +7,6 @@ public class SellerLoginRequest {
     private String phoneNumber;
     private String emailId;
 
-
+    public SellerLoginRequest() {
+    }
 }
