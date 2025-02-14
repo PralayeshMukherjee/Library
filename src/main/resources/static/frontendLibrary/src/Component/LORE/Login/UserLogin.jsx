@@ -82,10 +82,10 @@ function UserLogin() {
           <p className="text-white text-xs text-center">
             Login as Admin:{" "}
             <Link
-              href="/login/admin-Login"
+              to="/SellerLogin"
               className="text-orange-400 hover:text-orange-500"
             >
-              Login as Admin
+              Login as Seller
             </Link>
           </p>
         </form>
