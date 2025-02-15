@@ -13,6 +13,21 @@ public class SellerService {
     @Autowired
     private SellerRepository sellerRepo;
 
+    public boolean registerSellerService(String userName,String password,String name,String phoneNumber,String emailId){
+        try {
+            Seller seller = new Seller();
+            seller.setUserName(userName);
+            seller.setPassword(password);
+            seller.setName(name);
+            seller.setPhoneNumber(phoneNumber);
+            seller.setEmailId(emailId);
+            sellerRepo.save(seller);
+            return true;
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            return false;
+        }
+    }
 
 //    public void addAdmin(Seller admin){
 //        adminRepo.save(admin);
