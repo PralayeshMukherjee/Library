@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaTrash, FaPlus, FaSun, FaMoon } from "react-icons/fa";
+import { User } from "../../index";
 
 const SellerProfile = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -44,7 +45,7 @@ const SellerProfile = () => {
           )}
         </button>
         <img
-          src="https://via.placeholder.com/150"
+          src={User}
           alt="Seller Profile"
           className="w-28 h-28 rounded-full mx-auto border-4 border-indigo-500 shadow-md"
         />
@@ -84,7 +85,7 @@ const SellerProfile = () => {
             value={newBook.title}
             onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
             className={`w-full p-3 border ${
-              darkMode ? "placeholder-white" : "placeholder-black"
+              darkMode ? "placeholder-gray-400" : "placeholder-gray-600"
             } rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400`}
           />
           <input
@@ -93,7 +94,7 @@ const SellerProfile = () => {
             value={newBook.price}
             onChange={(e) => setNewBook({ ...newBook, price: e.target.value })}
             className={`w-full p-3 border ${
-              darkMode ? "placeholder-white" : "placeholder-black"
+              darkMode ? "placeholder-gray-400" : "placeholder-gray-600"
             } rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400`}
           />
           <button
