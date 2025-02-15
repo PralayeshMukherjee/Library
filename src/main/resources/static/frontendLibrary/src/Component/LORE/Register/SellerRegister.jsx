@@ -33,11 +33,11 @@ function SellerRegister() {
     console.log(data);
 
     if (data.register) {
-      sessionStorage.setItem("register", "true");
+      sessionStorage.setItem("isRegisterSeller", "true");
       const raj = navigate("/UserRegisterSuccess");
       console.log(raj);
     } else {
-      sessionStorage.setItem("register", "false");
+      sessionStorage.setItem("isRegisterSeller", "false");
       alert("No user register!");
     }
   };

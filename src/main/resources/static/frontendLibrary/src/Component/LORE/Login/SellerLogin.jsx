@@ -12,7 +12,7 @@ function SellerLogin() {
     e.preventDefault();
     console.log(formData);
 
-    const response = await fetch("http://localhost:8080/login/userLogin", {
+    const response = await fetch("http://localhost:8080/login/sellerLogin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ function SellerLogin() {
     const data = await response.json();
     console.log(data);
     if (data.exists) {
-      sessionStorage.setItem("isLogin", "true");
+      sessionStorage.setItem("isValidSeller", "true");
       navigate("/Main");
     } else {
       alert("User not Register");
