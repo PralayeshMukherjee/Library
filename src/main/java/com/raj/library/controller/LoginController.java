@@ -1,6 +1,7 @@
 package com.raj.library.controller;
 
 import com.raj.library.DTO.UserLoginRequest;
+import com.raj.library.Service.SellerService;
 import com.raj.library.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,37 +11,12 @@ import java.util.Map;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
-//    @GetMapping("/admin-Login")
-//    public String adminLogin(Model model){
-//        model.addAttribute("adminLogin",new Seller());
-//        return "adminLogin";
-//    }
-//    @PostMapping("/adminLogin")
-//    public String adminChecker(@ModelAttribute Seller admin){
-//        if(adminService.checkUserName(admin)){
-//            if(adminService.checkPassword(admin)){
-//                return "redirect:/login/AdminDetails";
-//            }{
-//                return "wrongPasswordAdmin";
-//            }
-//        }else{
-//            return "noAdmin";
-//        }
-//    }
-//    @GetMapping("/AdminDetails")
-//    public String adminPage(){
-//        return "home";
-//    }
 
+    @Autowired
+    private SellerService sellerService;
 
     @Autowired
     private UserService userService;
-//
-//    @GetMapping("/User-Login")
-//    public String userLogin(Model model){
-//        model.addAttribute("userLogin",new User());
-//        return "userLogin";
-//    }
     @PostMapping("/userLogin")
     public Map<String, Boolean> userChecker(@RequestBody UserLoginRequest userLoginRequest){
         String username = userLoginRequest.getUsername();
