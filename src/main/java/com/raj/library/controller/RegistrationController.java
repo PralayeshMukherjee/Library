@@ -1,9 +1,10 @@
 package com.raj.library.controller;
 
+
+import com.raj.library.DTO.RegisterSeller;
 import com.raj.library.DTO.RegisterUser;
-import com.raj.library.Service.AdminService;
+import com.raj.library.Service.SellerService;
 import com.raj.library.Service.UserService;
-import com.raj.library.entity.Seller;
 import com.raj.library.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,18 +18,31 @@ import java.util.Map;
 public class RegistrationController {
 
     @Autowired
-    private AdminService adminService;
+    private SellerService sellerService;
 
-    @PostMapping("/addAdmin")
-    public String  addAdmin(@ModelAttribute Seller admin){
-        adminService.addAdmin(admin);
-        return "SuccessAdmin";
+
+    public Map<String,Boolean> addSeller(@RequestBody RegisterSeller registerSeller){
+        String userName = registerSeller.getUserName();
+        String password = registerSeller.getPassword();
+        String name = registerSeller.getName();
+        String phoneNumber = registerSeller.getPhoneNumber();
+        String emailId = registerSeller.getEmailId();
+        boolean isRegisterSeller = sellerService.registerSellerService(userName,password,name,phoneNumber,emailId);
+        return Map.of("isRegisterSeller",isRegisterSeller);
     }
-    @GetMapping("/add-Seller")
-    public String getMethodForAddAdmin(Model model){
-        model.addAttribute("admin",new Seller());
-        return "addAdmin";
-    }
+//    @Autowired
+//    private AdminService adminService;
+//
+//    @PostMapping("/addAdmin")
+//    public String  addAdmin(@ModelAttribute Seller admin){
+//        adminService.addAdmin(admin);
+//        return "SuccessAdmin";
+//    }
+//    @GetMapping("/add-Seller")
+//    public String getMethodForAddAdmin(Model model){
+//        model.addAttribute("admin",new Seller());
+//        return "addAdmin";
+//    }
 
     @Autowired
     private UserService userService;
