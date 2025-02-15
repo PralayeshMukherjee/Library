@@ -5,8 +5,6 @@ import com.raj.library.repository.SellerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class SellerService {
 
@@ -29,7 +27,7 @@ public class SellerService {
         }
     }
 
-    public boolean userCheckerService(String userName,String password){
+    public boolean sellerCheckerService(String userName, String password){
         try {
             Seller temp = sellerRepo.findByUsernameAndPassword(userName,password);
             if(temp!=null){
