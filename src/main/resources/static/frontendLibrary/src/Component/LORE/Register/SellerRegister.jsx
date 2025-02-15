@@ -32,7 +32,7 @@ function SellerRegister() {
     const data = await response.json();
     console.log(data);
 
-    if (data.register) {
+    if (data.isRegisterSeller) {
       sessionStorage.setItem("isRegisterSeller", "true");
       const raj = navigate("/SellerRegisterSuccess");
       console.log(raj);
