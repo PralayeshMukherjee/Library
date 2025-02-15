@@ -1,21 +1,18 @@
 package com.raj.library.DTO;
 
 public class SellerLoginRequest {
-    private String userName;
+    private String username;
     private String password;
-    private String name;
-    private String phoneNumber;
-    private String emailId;
 
     public SellerLoginRequest() {
     }
 
     public String getUserName() {
-        return userName;
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUserName(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -24,29 +21,5 @@ public class SellerLoginRequest {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
     }
 }
