@@ -12,4 +12,5 @@ public interface SellerRepository extends JpaRepository<Seller,Long> {
 //    add a JPQL to use query
     @Query("SELECT s FROM Seller s JOIN s.books b WHERE b.title LIKE %:title%")
     List<Seller> findSellersByBookTitle(@Param("title")String title);
+    Seller findByUsernameAndPassword(String userName,String password);
 }
