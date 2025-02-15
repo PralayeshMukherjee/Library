@@ -1,9 +1,8 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { FaTrash, FaPlus, FaSun, FaMoon } from "react-icons/fa";
-import { ThemeContext } from "./ThemeProvider"; // Import ThemeContext
 
-function SellerFeature() {
-  const { darkMode, setDarkMode } = useContext(ThemeContext);
+const SellerProfile = () => {
+  const [darkMode, setDarkMode] = useState(false);
   const [books, setBooks] = useState([
     { id: 1, title: "The Great Gatsby", price: 20 },
     { id: 2, title: "1984", price: 15 },
@@ -36,7 +35,7 @@ function SellerFeature() {
       >
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-all"
+          className="absolute top-4 right-4 p-2 bg-gray-300 dark:bg-gray-700 rounded-full hover:bg-gray-400 dark:hover:bg-gray-600 transition-all"
         >
           {darkMode ? (
             <FaSun className="text-yellow-400" />
@@ -44,7 +43,6 @@ function SellerFeature() {
             <FaMoon className="text-gray-800" />
           )}
         </button>
-
         <img
           src="https://via.placeholder.com/150"
           alt="Seller Profile"
@@ -104,6 +102,6 @@ function SellerFeature() {
       </div>
     </div>
   );
-}
+};
 
-export default SellerFeature;
+export default SellerProfile;
