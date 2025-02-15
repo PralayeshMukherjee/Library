@@ -24,6 +24,26 @@ function MainHeader() {
       navigate("/Main/MainHome", { replace: true });
     }
   }, []);
+  const sellerUserNavigate = useNavigate();
+  const Changeable = () => {
+    const isLoginSeller = sessionStorage.getItem("isValidSeller") === "true";
+    const isLoginUser = sessionStorage.getItem("isLogin") === "true";
+    if (isLoginSeller) {
+      console.log(
+        "Seller is click on the feature tab. Redirect to add book section"
+      );
+      sellerUserNavigate("/Main/SellerFeature", { replace: true });
+      return;
+    }
+    if (isLoginUser) {
+      console.log(
+        "Seller is click on the feature tab. Redirect to search book"
+      );
+      sellerUserNavigate("/Main/features", { replace: true });
+    }
+    // useEffect(() => {
+    // }, []);
+  };
 
   return (
     <header className="shadow sticky z-50 top-0">
@@ -48,7 +68,7 @@ function MainHeader() {
           </li>
           <li>
             <NavLink
-              to={"/Main/features"}
+              to="#"
               className={({ isActive }) =>
                 `hover:text-orange-300 ${
                   isActive
@@ -56,6 +76,7 @@ function MainHeader() {
                     : "text-white"
                 }`
               }
+              onClick={Changeable}
             >
               Features
             </NavLink>
