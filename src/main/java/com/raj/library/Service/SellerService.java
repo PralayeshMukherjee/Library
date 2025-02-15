@@ -13,6 +13,7 @@ public class SellerService {
 
     public boolean registerSellerService(String userName,String password,String name,String phoneNumber,String emailId){
         try {
+            System.out.println(emailId);
             Seller seller = new Seller();
             seller.setUserName(userName);
             seller.setPassword(password);
@@ -29,7 +30,7 @@ public class SellerService {
 
     public boolean sellerCheckerService(String userName, String password){
         try {
-            Seller temp = sellerRepo.findByUsernameAndPassword(userName,password);
+            Seller temp = sellerRepo.findByUserNameAndPassword(userName,password);
             if(temp!=null){
                 return true;
             }else{

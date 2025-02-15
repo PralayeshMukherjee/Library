@@ -1,18 +1,18 @@
 package com.raj.library.DTO;
 
 public class SellerLoginRequest {
-    private String username;
+    private String userName;
     private String password;
 
     public SellerLoginRequest() {
     }
 
     public String getUserName() {
-        return username;
+        return userName;
     }
 
     public void setUserName(String username) {
-        this.username = username;
+        this.userName = username;
     }
 
     public String getPassword() {
