@@ -16,6 +16,7 @@ public class LoginController {
     @Autowired
     private SellerService sellerService;
 
+    @PostMapping("sellerLogin")
     public Map<String, Boolean> sellerChecker(@RequestBody SellerLoginRequest sellerLoginRequest){
         String userName = sellerLoginRequest.getUserName();
         String  password = sellerLoginRequest.getPassword();
