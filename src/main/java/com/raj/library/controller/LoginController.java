@@ -1,5 +1,6 @@
 package com.raj.library.controller;
 
+import com.raj.library.DTO.SellerLoginRequest;
 import com.raj.library.DTO.UserLoginRequest;
 import com.raj.library.Service.SellerService;
 import com.raj.library.Service.UserService;
@@ -14,6 +15,13 @@ public class LoginController {
 
     @Autowired
     private SellerService sellerService;
+
+    public Map<String, Boolean> sellerChecker(@RequestBody SellerLoginRequest sellerLoginRequest){
+        String userName = sellerLoginRequest.getUserName();
+        String  password = sellerLoginRequest.getPassword();
+        boolean isValidSeller = sellerService.sellerCheckerService(userName,password);
+        return Map.of("isValidSeller",isValidSeller);
+    }
 
     @Autowired
     private UserService userService;
