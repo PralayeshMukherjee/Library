@@ -24,5 +24,6 @@ import Clear from '../images/Clear.png'
 import Sellers from '../Component/MainPages/Features/Sellers.jsx'
 import SellerLogin from '../Component/LORE/Login/SellerLogin.jsx'
 import SellerRegister from '../Component/LORE/Register/SellerRegister.jsx'
+import SellerRegisterSuccess from '../Component/Success/SellerRegisterSuccess.jsx'
 
-export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG,SearchBox,Features,Search,Clear,Sellers,SellerLogin,SellerRegister};
+export {Layout,Home,UserLogin,UserRegister,UserRegisterSuccess,MainHeader,MainLayout,MainFooter,MainHome,About,Library,User,Profile,Setting,Help,Logout,Pic,userLoginPNG,AboutPNG,SearchBox,Features,Search,Clear,Sellers,SellerLogin,SellerRegister,SellerRegisterSuccess};
