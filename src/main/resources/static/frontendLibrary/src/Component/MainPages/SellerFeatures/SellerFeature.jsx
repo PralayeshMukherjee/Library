@@ -57,7 +57,7 @@ const SellerProfile = () => {
             {books.map((book) => (
               <li
                 key={book.id}
-                className="flex justify-between items-center p-3 rounded-lg shadow-md bg-gray-100 dark:bg-gray-700"
+                className="flex justify-between items-center p-3 rounded-lg shadow-md hover:border-1"
               >
                 <span className="text-lg">
                   {book.title} -{" "}
@@ -76,21 +76,25 @@ const SellerProfile = () => {
           </ul>
         </div>
 
-        <div className="mt-6">
+        <div className={`mt-6`}>
           <h3 className="text-xl font-semibold">Add New Book</h3>
           <input
             type="text"
             placeholder="Book Title"
             value={newBook.title}
             onChange={(e) => setNewBook({ ...newBook, title: e.target.value })}
-            className="w-full p-3 border rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-gray-600 dark:text-white"
+            className={`w-full p-3 border ${
+              darkMode ? "placeholder-white" : "placeholder-black"
+            } rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400`}
           />
           <input
             type="number"
             placeholder="Price"
             value={newBook.price}
             onChange={(e) => setNewBook({ ...newBook, price: e.target.value })}
-            className="w-full p-3 border rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400 dark:bg-gray-600 dark:text-white"
+            className={`w-full p-3 border ${
+              darkMode ? "placeholder-white" : "placeholder-black"
+            } rounded-lg mt-2 focus:outline-none focus:ring-2 focus:ring-indigo-400`}
           />
           <button
             onClick={handleAddBook}
