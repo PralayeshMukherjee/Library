@@ -34,7 +34,7 @@ function SellerRegister() {
 
     if (data.register) {
       sessionStorage.setItem("isRegisterSeller", "true");
-      const raj = navigate("/UserRegisterSuccess");
+      const raj = navigate("/SellerRegisterSuccess");
       console.log(raj);
     } else {
       sessionStorage.setItem("isRegisterSeller", "false");
