@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userLoginPNG } from "../../index";
 
 function SellerLogin() {
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({ userName: "", password: "" });
   const navigate = useNavigate();
   const handelChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -39,13 +39,13 @@ function SellerLogin() {
         </h2>
         <form onSubmit={handelSubmit} className="flex flex-col space-y-4">
           <div>
-            <label htmlFor="username" className="text-white block mb-1">
+            <label htmlFor="userName" className="text-white block mb-1">
               Username:
             </label>
             <input
               type="text"
-              id="username"
-              name="username"
+              id="userName"
+              name="userName"
               className="w-full p-2 bg-transparent border border-white text-white rounded-lg focus:outline-none placeholder-white"
               placeholder="Enter username"
               onChange={handelChange}
