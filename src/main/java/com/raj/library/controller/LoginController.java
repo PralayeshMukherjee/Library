@@ -1,8 +1,6 @@
 package com.raj.library.controller;
 
-import com.raj.library.DTO.RegisterSeller;
 import com.raj.library.DTO.UserLoginRequest;
-import com.raj.library.Service.SellerService;
 import com.raj.library.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,13 +10,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/login")
 public class LoginController {
-
-    @Autowired
-    private SellerService sellerService;
-
-    public String registerSellerController(@RequestBody RegisterSeller registerSeller){
-
-    }
 //    @GetMapping("/admin-Login")
 //    public String adminLogin(Model model){
 //        model.addAttribute("adminLogin",new Seller());
