@@ -21,6 +21,7 @@ public class RegistrationController {
     private SellerService sellerService;
 
 
+    @PostMapping("/addSeller")
     public Map<String,Boolean> addSeller(@RequestBody RegisterSeller registerSeller){
         String userName = registerSeller.getUserName();
         String password = registerSeller.getPassword();
