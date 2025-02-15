@@ -6,4 +6,7 @@ public class RegisterSeller {
     private String name;
     private String phoneNumber;
     private String emailId;
+
+    public RegisterSeller() {
+    }
 }
