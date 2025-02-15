@@ -7,11 +7,23 @@ function MainHeader() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const navigate = useNavigate();
   useEffect(() => {
-    const isLogin = sessionStorage.getItem("isLogin");
-    if (isLogin != "true") {
-      navigate("/userLogin");
+    const isLoginSeller = sessionStorage.getItem("isValidSeller") === "true";
+    const isLoginUser = sessionStorage.getItem("isLogin") === "true";
+    if (!isLoginSeller && !isLoginUser) {
+      console.log("No user is logged in. Redirecting to userLogin...");
+      navigate("/userLogin", { replace: true });
+      return;
     }
-  });
+    if (isLoginSeller) {
+      console.log("Seller is logged in. Redirecting to MainHome...");
+      navigate("/Main/MainHome", { replace: true });
+      return;
+    }
+    if (isLoginUser) {
+      console.log("User is logged in. Allowing access.");
+      navigate("/Main/MainHome", { replace: true });
+    }
+  }, []);
 
   return (
     <header className="shadow sticky z-50 top-0">
