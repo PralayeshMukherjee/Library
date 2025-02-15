@@ -1,16 +1,6 @@
-import React, { useState, createContext, useContext } from "react";
+import React, { useState, useContext } from "react";
 import { FaTrash, FaPlus, FaSun, FaMoon } from "react-icons/fa";
-
-const ThemeContext = createContext();
-
-const ThemeProvider = ({ children }) => {
-  const [darkMode, setDarkMode] = useState(false);
-  return (
-    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <div className={darkMode ? "dark" : "light"}>{children}</div>
-    </ThemeContext.Provider>
-  );
-};
+import { ThemeContext } from "./ThemeProvider"; // Import ThemeContext
 
 function SellerFeature() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -30,6 +20,7 @@ function SellerFeature() {
   const handleDeleteBook = (id) => {
     setBooks(books.filter((book) => book.id !== id));
   };
+
   return (
     <div
       className={`flex justify-center items-center min-h-screen p-6 transition-all duration-300 ${
@@ -45,7 +36,7 @@ function SellerFeature() {
       >
         <button
           onClick={() => setDarkMode(!darkMode)}
-          className="absolute top-4 right-4 p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-all"
+          className="p-2 bg-gray-300 rounded-full hover:bg-gray-400 transition-all"
         >
           {darkMode ? (
             <FaSun className="text-yellow-400" />
@@ -53,6 +44,7 @@ function SellerFeature() {
             <FaMoon className="text-gray-800" />
           )}
         </button>
+
         <img
           src="https://via.placeholder.com/150"
           alt="Seller Profile"
